@@ -1,0 +1,140 @@
+﻿/* Стили для основного контента */
+.main-content {
+    margin: 50px 150px 10px 150px; /* Верх Право Низ Лево */
+    padding: 0px;
+    flex-grow: 1;
+    position: relative;
+    max-height: calc(100vh - 60px);
+}
+
+#content-area {
+    max-height: 100%; /*  Занимает всю доступную высоту родителя */
+    overflow-y: auto; /* Добавляем скролл */
+    position: relative;
+}
+
+.content {
+    overflow: auto; /* Важно: разрешить прокрутку */
+    position: relative; /*  Важно для позиционирования скроллбара */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+    .content h1 {
+        margin-bottom: 10px;
+        color: black;
+        border-bottom: 3px solid #473751;
+        font-size: 45px; /* Размер шрифта */
+        font-weight: normal;
+        text-align: start; /* Выравнивание сверху */
+        height: 55px; /* Чтобы "разделитель" был чуть ниже текста */
+    }
+
+
+/* Кнопки фильтрации */
+.filters {
+    display: flex;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+    .filters button {
+        margin-right: 10px;
+        padding: 5px 10px;
+        background-color: #e5e5e5;
+        color: black;
+        font-weight: 700;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        flex-shrink: 0; /* Запрещаем кнопкам сжиматься */
+    }
+
+        .filters button.active {
+            background: linear-gradient(90deg, #473751 60%, #2c2831);
+            color: white;
+        }
+
+        /* Стили для последних двух кнопок */
+        .filters button:nth-last-child(2) {
+            margin-left: auto; /* Сдвигаем предпоследнюю кнопку вправо */
+            font-size: 20px;
+            font-weight: 550;
+        }
+
+        .filters button:last-child {
+            margin-left: 0; /* Последняя кнопка остаётся рядом с предпоследней */
+        }
+
+            .filters button:nth-last-child(2):hover, .filters button:last-child:hover {
+                background: linear-gradient(90deg, #473751 60%, #2c2831);
+                color: white;
+            }
+
+
+/* Карусели контента */
+.autor-carousel {
+    display: flex;
+    overflow-x: auto; /* Горизонтальная прокрутка */
+    gap: 80px; /* Расстояние между элементами */
+    padding: 10px 0; /* Отступы сверху и снизу */
+}
+
+.carousel {
+    display: flex;
+    overflow-x: auto; /* Горизонтальная прокрутка */
+    gap: 115px; /* Расстояние между элементами */
+    padding: 10px 0; /* Отступы сверху и снизу */
+}
+
+.autor-carousel-item, .carousel-item {
+    text-decoration: none; /* Убираем подчёркивание у ссылки */
+    color: inherit; /* Наследуем цвет текста */
+    text-align: center; /* Выравниваем текст по центру */
+    flex: 0 0 auto; /* Запрещаем элементам сжиматься/растягиваться */
+    padding-bottom: 10px;
+}
+
+    .autor-carousel-item:hover, .carousel-item:hover {
+        transform: translateY(-5px); /* Сдвигаем элемент вверх при наведении */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень при наведении */
+    }
+
+    .autor-carousel-item img {
+        width: 330px; /* Ширина изображения */
+        height: 190px; /* Высота изображения */
+        object-fit: cover; /* Обрезаем изображение, чтобы оно заполнило контейнер */
+        margin-bottom: 5px; /* Отступ между изображением и текстом */
+    }
+
+    .carousel-item img {
+        width: 220px; /* Ширина изображения */
+        height: 320px; /* Высота изображения */
+        object-fit: cover; /* Обрезаем изображение, чтобы оно заполнило контейнер */
+        margin-bottom: 5px; /* Отступ между изображением и текстом */
+    }
+
+    .autor-carousel-item p {
+        margin: 0; /* Убираем отступы у текста */
+        font-size: 20px; /* Размер текста */
+        font-weight: 700;
+        color: #548bbd; /* Цвет текста */
+    }
+
+.carousel-item_upper-text {
+    margin: 0; /* Убираем отступы у текста */
+    font-size: 22px; /* Размер текста */
+    font-weight: 1000;
+    color: #505050; /* Цвет текста */
+}
+
+    .carousel-item_upper-text b {
+        font-size: 15px; /* Размер текста */
+        font-weight: 700;
+    }
+
+.carousel-item_lower-text {
+    margin: 0; /* Убираем отступы у текста */
+    font-size: 18px; /* Размер текста */
+    font-weight: 700;
+    color: #9f9f9f;
+}

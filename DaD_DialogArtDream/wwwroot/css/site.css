@@ -1,22 +1,128 @@
-html {
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-
 body {
-  margin-bottom: 60px;
+    background: #f3f3f3; /* Цвет фона для всей страницы */
+    margin: 0; /* Убираем стандартные отступы */
+    padding: 0; /* Убираем стандартные отступы */
+}
+
+/* Стили для верхней панели */
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Занимает всю ширину экрана */
+    height: 60px; /* Фиксированная высота */
+    background-color: #f3f3f3;
+    padding: 10px 10px 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    box-sizing: border-box; /* Учитываем padding в общей ширине */
+}
+
+.logo {
+    font-size: 35px;
+    font-weight: bold;
+    color: #6a1b9a; /* Фиолетовый акцент */
+    white-space: nowrap; /* Предотвращает перенос текста */
+}
+
+.top-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.icon {
+    cursor: pointer;
+    font-size: 20px;
+    flex-shrink: 0; /* Предотвращает сжатие иконок */
+}
+
+.loggedin-user {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0; /* Предотвращает сжатие блока профиля */
+}
+
+.loggedin-user-avatar {
+    width: 60px;
+    height: 40px;
+    object-fit: cover;
+    flex-shrink: 0; /* Предотвращает сжатие аватара */
+
+    border: 2px solid plum;
+    border-radius: 10px;
+}
+
+.loggedin-username {
+    font-size: 16px;
+    white-space: nowrap; /* Предотвращает перенос текста */
+    padding-right: 10px;
+}
+
+.dropdown-icon {
+    cursor: pointer;
+    flex-shrink: 0; /* Предотвращает сжатие иконки */
+    align-self: start; /* Чтобы стрелочка была сверху */
+}
+
+
+/* Стили для левой панели */
+.left-bar {
+    position: fixed;
+    top: 60px; /* Прилегает к верхней панели */
+    left: 0;
+    width: 50px;
+    height: calc(100vh - 60px); /* Занимает всю высоту экрана минус высота верхней панели */
+    background: linear-gradient(90deg, #473751 60%, #2c2831); /* Градиент от тёмно-фиолетового к фиолетовому */
+    padding: 10px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Равномерное расстояние между иконками */
+}
+
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    color: white; /* Белый цвет иконки */
+    margin-top: 10px; /* Небольшой отступ сверху */
+}
+
+.nav-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Расстояние между иконками */
+    text-align: center;
+}
+
+.nav-icon {
+    font-size: 20px;
+    cursor: pointer;
+    color: white; /* Белый цвет иконок */
+}
+    .nav-icon:hover {
+        background-color: #e5e5e5; /* Цвет при наведении */
+    }
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    background-color: #f3f3f3;
+}
+
+::-webkit-scrollbar-track {
+    margin-top: 60px;
+    width: 10px; /* Ширина трека */
+    background-color: #f3f3f3; /* Цвет нужно сделать под цвет фона */
+}
+
+::-webkit-scrollbar-thumb {
+    width: 10px;
+    background: linear-gradient(90deg, #473751 60%, #2c2831);
+    border: 2px solid #c6c6c6;
+    cursor: pointer; /*  Добавляем курсор-указатель */
 }
