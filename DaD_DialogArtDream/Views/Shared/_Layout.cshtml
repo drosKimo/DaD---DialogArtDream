@@ -18,19 +18,37 @@
         <div class="logo">DialogArtDream</div>
         <div class="top-icons">
             <span class="icon">🔍</span> <!-- Иконка поиска -->
-            <span class="icon">⚙️</span> <!-- Иконка настроек -->
-            <span class="icon">🔔</span> <!-- Иконка уведомлений -->
 
             @if (User.IsInRole("Admin"))
             {
                 <span class="icon">🛠️</span> <!-- Дополнительная иконка для админа -->
+                <span class="icon">⚙️</span> <!-- Иконка настроек -->
+                <span class="icon">🔔</span> <!-- Иконка уведомлений -->
+
+                <div class="loggedin-user">
+                    <span class="loggedin-username">User123</span>
+                    <img src="~/images/icon.gif" alt="Avatar" class="loggedin-user-avatar" />
+                    <span class="dropdown-icon">▼</span>
+                </div>
+            }
+            else if (User.IsInRole("User"))
+            {
+                <span class="icon">⚙️</span> <!-- Иконка настроек -->
+                <span class="icon">🔔</span> <!-- Иконка уведомлений -->
+
+                <div class="loggedin-user">
+                    <span class="loggedin-username">User123</span>
+                    <img src="~/images/icon.gif" alt="Avatar" class="loggedin-user-avatar" />
+                    <span class="dropdown-icon">▼</span>
+                </div>
+            }
+            else
+            {
+                <a href="/author/1" class="log-in">
+                    <b>Log In</b> or <b>Create an Account</b>
+                </a>
             }
 
-            <div class="loggedin-user">
-                <span class="loggedin-username">User123</span>
-                <img src="~/images/icon.gif" alt="Avatar" class="loggedin-user-avatar" />
-                <span class="dropdown-icon">▼</span>
-            </div>
         </div>
     </header>
 

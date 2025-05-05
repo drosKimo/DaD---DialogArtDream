@@ -1,13 +1,13 @@
 ﻿/* Стили для основного контента */
 .main-content {
-    margin: 50px 150px 10px 150px; /* Верх Право Низ Лево */
+    margin: 75px 150px 10px 150px; /* Верх Право Низ Лево */
     padding: 0px;
     flex-grow: 1;
     position: relative;
     max-height: calc(100vh - 60px);
 }
 
-#content-area {
+.content-area {
     max-height: 100%; /*  Занимает всю доступную высоту родителя */
     overflow-y: auto; /* Добавляем скролл */
     position: relative;
@@ -70,6 +70,34 @@
                 color: white;
             }
 
+.index-ad {
+    margin: 0px;
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+    .index-ad img {
+        width: 215px;
+        height: 160px;
+    }
+
+.index-ad-text {
+    margin: 0px;
+    margin-top: 8px;
+    font-size: 12pt;
+    color: #457A85;
+}
+
+.news {
+    display: flex;
+    justify-content: space-between; /* Распределяем пространство между элементами */
+    align-items: center; /* Выравниваем по вертикали */
+    width: 100%; /* Занимаем всю доступную ширину */
+}
+    .news h1 {
+        border: none;
+    }
 
 /* Карусели контента */
 .autor-carousel {
